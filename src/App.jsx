@@ -34,7 +34,7 @@ const enviar = () =>{
     <>
      <div className="container">
       <h2 className="mt-3 mb-3">Cadastro de Filmes</h2>
-     <form className="row g-3">
+     <form className="row g-3" onSubmit={enviar}>
       <InputForm nome='Título' width={10}/>
       <InputForm nome='Gênero' width={2}/>
       <InputForm nome='Diretor' width={6}/>
