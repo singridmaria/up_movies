@@ -6,7 +6,9 @@ function App() {
 
   const [fields, setFields] = useState({
     titulo: '',
-    sinopse:'O Filme é de se c...ar',
+    genero: '',
+    diretor: '',
+    sinopse:'',
     votos:''
   })
 
@@ -22,7 +24,7 @@ function App() {
 
 const enviar = () =>{
   event.preventDefault()
-  console.log('enviar')
+  console.log('enviar', fields)
 }
   const limpar = () =>{
     event.preventDefault()
@@ -35,11 +37,34 @@ const enviar = () =>{
      <div className="container">
       <h2 className="mt-3 mb-3">Cadastro de Filmes</h2>
      <form className="row g-3" onSubmit={enviar}>
-      <InputForm nome='Título' width={10}/>
-      <InputForm nome='Gênero' width={2}/>
-      <InputForm nome='Diretor' width={6}/>
-      <InputForm nome='Sinopse' width={2}/>
-      <InputForm nome='Votos' width={1}/>
+      <InputForm
+       nome='Título' 
+       width={10} 
+       value={fields.titulo}
+       change={atualizaInput}
+       />
+      <InputForm
+      nome='Gênero'
+      width={2}
+      value={fields.genero}
+       change={atualizaInput}/>
+      <InputForm
+      nome='Diretor'
+      width={6}
+      value={fields.diretor}
+       change={atualizaInput}
+       />
+      
+      <InputForm
+      nome='Sinopse'
+      width={2}
+      value={fields.sinopse}
+       change={atualizaInput}/>
+      <InputForm
+      nome='Votos'
+      width={1}
+      value={fields.votos}
+       change={atualizaInput}/>
 
       <div className="row mt-3">
       <Button 
